@@ -1,0 +1,11 @@
+universe = vanilla
+notification=never
+executable = app_script.sh
+output = logs/words.out.$(Process)
+error = logs/words.err.$(Process)
+log = logs/words.log
+transfer_input_files = ./distribution
+ShouldTransferFiles = YES
+when_to_transfer_output = ON_EXIT
++ProjectName = "ConnectTrain"
+queue 50
