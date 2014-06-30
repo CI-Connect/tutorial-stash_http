@@ -1,6 +1,6 @@
 universe = vanilla
 notification=never
-executable = app_script.sh
+executable = ${TESTDIR}/tutorial-stash_http/application/app_script.sh
 output = logs/words.out.$(Process)
 error = logs/words.err.$(Process)
 log = logs/words.log
