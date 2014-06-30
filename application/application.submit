@@ -7,5 +7,5 @@ log = logs/words.log
 transfer_input_files = ./distribution
 ShouldTransferFiles = YES
 when_to_transfer_output = ON_EXIT
-+ProjectName = "ConnectTrain"
+# +ProjectName = "ConnectTrain"
 queue 50
