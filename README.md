@@ -1,4 +1,4 @@
-OSG Connect Tutorial: Access Stash remotely using HTTP
+Connect Tutorial: Access Stash remotely using HTTP
 ======================================================
 
 Overview
@@ -7,7 +7,7 @@ This page will introduce users to accessing data stored on stash remotely using 
 
 Preliminaries
 -------------
-Before getting started, users should login to login01.osgconnect.net and get a copy of the tutorial files:
+Before getting started, users should login  and get a copy of the tutorial files:
 ```
 % ssh login01.osgconnect.net
 $ tutorial stash_http
@@ -15,7 +15,7 @@ $ cd osg-stash_http
 ```
 Making data accessible over HTTP
 --------------------------------
-All user accounts on OSG-Connect have a directory that is automatically web accessible.  This directory is located at ~/data/public.  To make a file or directory accessible, copy it to this directory or a subdirectory of this directory and give files permissions of 644 and directories permissions of 755. E.g.:
+All user accounts on Connect have a directory that is automatically web accessible.  This directory is located at ~/data/public.  To make a file or directory accessible, copy it to this directory or a subdirectory of this directory and give files permissions of 644 and directories permissions of 755. E.g.:
 ```
 $ cd ~/osg-stash_http
 $ cp random_words ~/data/public
