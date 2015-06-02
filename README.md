@@ -11,13 +11,13 @@ Before getting started, users should login  and get a copy of the tutorial files
 ```
 % ssh login01.osgconnect.net
 $ tutorial stash_http
-$ cd osg-stash_http
+$ cd tutorial-stash_http
 ```
 Making data accessible over HTTP
 --------------------------------
 All user accounts on Connect have a directory that is automatically web accessible.  This directory is located at ~/data/public.  To make a file or directory accessible, copy it to this directory or a subdirectory of this directory and give files permissions of 644 and directories permissions of 755. E.g.:
 ```
-$ cd ~/osg-stash_http
+$ cd ~/tutorial-stash_http
 $ cp random_words ~/data/public
 $ chmod 644 ~/data/public/random_words
 $ cp -a test_directory ~/data/public/test_directory
@@ -28,7 +28,7 @@ Manually Accessing Stash using HTTP
 -----------------------------------
 All the contents of the public directory are made available over HTTP.  Go to http://stash.osgconnect.net/+username to view the files and directory that you just made available in the previous section. You can also use wget to retrieve the files, e.g:
 ```
-$ cd ~/osg-stash_http
+$ cd ~/tutorial-stash_http
 $ mkdir tmp
 $ cd tmp
 $ wget --no-check-certificate http://stash.osgconnect.net/+username/test_directory/test_file
@@ -58,12 +58,12 @@ queue 50
 ```
 Once that change has been made, submit the file:
 ```
-$ cd ~/osg-stash_http/application
+$ cd ~/tutorial-stash_http/application
 $ condor_submit application.submit
 ```
 Once the jobs are completed, users can look at the output in the logs directory and verify that the job ran correctly:
 ```
-$ cd ~/osg-stash_http/application
+$ cd ~/tutorial-stash_http/application
 $ cat logs/words.out.1
 Ashkenazim |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BIOS       |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
