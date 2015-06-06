@@ -13,7 +13,7 @@ $ tutorial stash_http
 $ cd tutorial-stash_http
 ```
 
-## Making data accessible over HTTP
+## Make data remotely accessible 
 All user accounts on the OSG Connect login server have a directory that can be made web-accessible.  This directory is located at `~/data/public`.  To make a file or directory accessible, copy it to this directory, or a subdirectory of this directory, and give files permissions of `644` and directories permissions of `755`. E.g.:
 ```
 $ cd ~/tutorial-stash_http
@@ -24,7 +24,7 @@ $ chmod 755 ~/data/public/test_directory
 $ chmod 644 ~/data/public/test_directory/test_file
 ```
 
-## Manually Accessing Stash using HTTP
+## Manually Access Stash Using the Web
 
 All the contents of the public directory are made available over HTTP.  Point your browser to  `http://stash.osgconnect.net/+username` to view the files and directory that you just made available in the previous section. You can also use `wget` to retrieve the files, e.g:
 ```
@@ -34,7 +34,7 @@ $ cd tmp
 $ wget --no-check-certificate http://stash.osgconnect.net/+username/test_directory/test_file
 ```
 
-## Accessing data from Stash over HTTP within jobs
+## Accessing data from Stash over HTTP from a job 
 
 > Here is an example of using HTTP to access data from Stash from a job running on the OSG. 
 
