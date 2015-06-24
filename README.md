@@ -41,47 +41,41 @@ The primary component of this example is the shell script that is run on the com
 
 Next edit the `application/application.submit` file and replace `PROJECT_NAME` with the appropriate project name. Edit `application.submit`:
 
-```
-universe = vanilla
-notification=never
-executable = app_script.sh
-output = logs/words.out.$(Process)
-error = logs/words.err.$(Process)
-log = logs/words.log
-transfer_input_files = distribution
-ShouldTransferFiles = YES
-when_to_transfer_output = ON_EXIT
-+ProjectName = "ConnectTrain"
-queue 50
-```
+	universe = vanilla
+	notification=never
+	executable = app_script.sh
+	output = logs/words.out.$(Process)
+	error = logs/words.err.$(Process)
+	log = logs/words.log
+	transfer_input_files = distribution
+	ShouldTransferFiles = YES
+	when_to_transfer_output = ON_EXIT
+	+ProjectName = "ConnectTrain"
+	queue 50
 Once that change has been made, submit the file:
 
-```
-$ cd ~/tutorial-stash_http/application
-$ condor_submit application.submit
-```
+	$ cd ~/tutorial-stash_http/application
+	$ condor_submit application.submit
 
 Once the jobs are completed, look at the output in the logs directory and verify that the job ran correctly:
 
-```
-$ cd ~/tutorial-stash_http/application
-$ cat logs/words.out.1
-Ashkenazim |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-BIOS       |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Anaheim    |44 (0.43%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Aymara     |44 (0.43%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Arthurian  |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Anaxagoras |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Bactria    |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Alexis     |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Ariel      |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Aubrey     |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
-Baryshnikov|42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
-Bahia      |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
-Angstrom   |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
-Asoka      |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
-Alcatraz   |41 (0.40%) ++++++++++++++++++++++++++++++++++++++++++++++++++++
-```
+	$ cd ~/tutorial-stash_http/application
+	$ cat logs/words.out.1
+	Ashkenazim |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	BIOS       |45 (0.44%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Anaheim    |44 (0.43%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Aymara     |44 (0.43%) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Arthurian  |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Anaxagoras |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Bactria    |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Alexis     |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Ariel      |43 (0.42%) ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Aubrey     |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Baryshnikov|42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Bahia      |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Angstrom   |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Asoka      |42 (0.41%) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Alcatraz   |41 (0.40%) ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at `user-support@opensciencegrid.org` or visit the [help desk and community forums](http://support.opensciencegrid.org).
