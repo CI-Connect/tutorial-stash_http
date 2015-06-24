@@ -7,12 +7,14 @@ This tutorial will introduce you to accessing data stored on Stash remotely usin
 ## Preliminaries
 
 Login and get a copy of the tutorial files:
-	% ssh login01.osgconnect.net
+
+	$ ssh login01.osgconnect.net
 	$ tutorial stash_http
 	$ cd tutorial-stash_http
 
 ## Make data remotely accessible 
 All user accounts on the OSG Connect login server have a directory that can be made web-accessible.  This directory is located at `~/data/public`.  To make a file or directory accessible, copy it to this directory, or a subdirectory of this directory, and give files permissions of `644` and directories permissions of `755`. E.g.:
+
 	$ cd ~/tutorial-stash_http
 	$ cp random_words ~/data/public
 	$ chmod 644 ~/data/public/random_words
@@ -23,6 +25,7 @@ All user accounts on the OSG Connect login server have a directory that can be m
 ## Manually Access Stash Using the Web
 
 All the contents of the public directory are made available over HTTP.  Point your browser to  `http://stash.osgconnect.net/+username` to view the files and directory that you just made available in the previous section. You can also use `wget` to retrieve the files, e.g:
+
 	$ cd ~/tutorial-stash_http
 	$ mkdir tmp
 	$ cd tmp
@@ -52,6 +55,7 @@ Next edit the `application/application.submit` file and replace `PROJECT_NAME` w
 	when_to_transfer_output = ON_EXIT
 	+ProjectName = "ConnectTrain"
 	queue 50
+
 Once that change has been made, submit the file:
 
 	$ cd ~/tutorial-stash_http/application
