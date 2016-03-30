@@ -24,12 +24,12 @@ All user accounts on the OSG Connect login server have a directory that can be m
 
 ## Manually Access Stash Using the Web
 
-All the contents of the public directory are made available over HTTP.  Point your browser to  `http://stash.osgconnect.net/+username` to view the files and directory that you just made available in the previous section. You can also use `wget` to retrieve the files, e.g:
+All the contents of the public directory are made available over HTTP.  Point your browser to  `http://stash.osgconnect.net/~username` to view the files and directory that you just made available in the previous section. You can also use `wget` to retrieve the files, e.g:
 
 	$ cd ~/tutorial-stash_http
 	$ mkdir tmp
 	$ cd tmp
-	$ wget --no-check-certificate http://stash.osgconnect.net/+username/test_directory/test_file
+	$ wget --no-check-certificate http://stash.osgconnect.net/~username/test_directory/test_file
 
 ## Accessing data from Stash over HTTP from a job 
 
@@ -38,7 +38,7 @@ All the contents of the public directory are made available over HTTP.  Point yo
 The primary component of this example is the shell script that is run on the compute node.  It downloads a data file `random_words` and then generates a histogram with the most common words found in the file.  Before running this example, `app_script.sh` needs to be edited to replace `username` with the user's OSG Connect username. Edit the file `app_script.sh`:
 
 	#!/bin/bash
-	wget --no-check-certificate http://stash.osgconnect.net/+username/random_words
+	wget --no-check-certificate http://stash.osgconnect.net/~username/random_words
 	chmod 700 ./distribution
 	cat random_words | ./distribution
 
@@ -53,7 +53,6 @@ Next edit the `application/application.submit` file and replace `PROJECT_NAME` w
 	transfer_input_files = distribution
 	ShouldTransferFiles = YES
 	when_to_transfer_output = ON_EXIT
-	+ProjectName = "ConnectTrain"
 	queue 50
 
 Once that change has been made, submit the file:
